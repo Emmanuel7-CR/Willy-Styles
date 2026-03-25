@@ -1,4 +1,112 @@
 /* =========================================
+   iOS/iPhone Compatibility Fixes
+   ========================================= */
+
+/* Fix for iOS Safari viewport issues */
+@supports (-webkit-touch-callout: none) {
+    .hero {
+        min-height: -webkit-fill-available;
+    }
+    
+    /* Fix sticky positioning on iOS */
+    .sticky-cta {
+        position: -webkit-sticky;
+        position: sticky;
+    }
+    
+    /* Fix smooth scroll on iOS */
+    html {
+        -webkit-overflow-scrolling: touch;
+    }
+    
+    /* Fix backdrop-filter support */
+    .navbar {
+        -webkit-backdrop-filter: blur(10px);
+        backdrop-filter: blur(10px);
+    }
+}
+
+/* Prevent unwanted zoom on tap */
+* {
+    -webkit-tap-highlight-color: transparent;
+    tap-highlight-color: transparent;
+}
+
+/* Fix for iOS touch events */
+a, button, .service-card, .portfolio-item, .tag {
+    -webkit-touch-callout: none;
+    -webkit-user-select: none;
+    user-select: none;
+    cursor: pointer;
+}
+
+/* Ensure images don't cause layout shift on iOS */
+img {
+    -webkit-user-drag: none;
+    user-drag: none;
+    -webkit-user-select: none;
+    user-select: none;
+}
+
+/* Fix for iOS form elements */
+input, textarea, select {
+    -webkit-appearance: none;
+    appearance: none;
+    border-radius: 0;
+}
+
+/* Fix for iOS button styles */
+button, .btn-primary, .btn-outline, .btn-book {
+    -webkit-appearance: none;
+    appearance: none;
+    border-radius: 0;
+}
+
+/* Ensure proper touch target sizes for iOS */
+@media (hover: none) and (pointer: coarse) {
+    .nav-link,
+    .btn-primary,
+    .btn-outline,
+    .service-link,
+    .tag,
+    .footer-social a {
+        min-height: 44px;
+        min-width: 44px;
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+    }
+    
+    /* Increase spacing for touch targets */
+    .nav-links {
+        gap: 1.5rem;
+    }
+    
+    .hero-btns {
+        gap: 1rem;
+    }
+}
+
+/* Fix for iOS safe area (notch) */
+@supports (padding: max(0px)) {
+    .navbar {
+        padding-left: max(1.5rem, env(safe-area-inset-left));
+        padding-right: max(1.5rem, env(safe-area-inset-right));
+    }
+    
+    .sticky-cta {
+        right: max(2rem, env(safe-area-inset-right));
+        bottom: max(2rem, env(safe-area-inset-bottom));
+    }
+    
+    .container {
+        padding-left: max(1.5rem, env(safe-area-inset-left));
+        padding-right: max(1.5rem, env(safe-area-inset-right));
+    }
+}
+
+
+/* =========================================
    1. VARIABLES & RESET
    ========================================= */
 :root {

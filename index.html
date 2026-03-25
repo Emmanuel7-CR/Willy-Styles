@@ -2,8 +2,14 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, user-scalable=yes, viewport-fit=cover">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    
+    <!-- iOS Specific Meta Tags -->
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <meta name="apple-mobile-web-app-title" content="Willy Styles">
+    <meta name="format-detection" content="telephone=no">
     
     <!-- SEO & GEO -->
     <title>Willy Styles | Premium Mobile Barber Service</title>
@@ -19,9 +25,11 @@
     <meta property="og:description" content="Experience luxury barbering without leaving your home.">
     <meta property="og:image" content="https://images.unsplash.com/photo-1585747860715-2ba37e788b70?w=1200">
     
-    <!-- Favicon -->
-    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>✂️</text></svg>">
-    <link rel="apple-touch-icon" href="https://cdn-icons-png.flaticon.com/512/2235/2235393.png">
+    <!-- Favicon - iOS Compatible -->
+    <link rel="icon" type="image/png" href="https://cdn-icons-png.flaticon.com/512/2235/2235393.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="https://cdn-icons-png.flaticon.com/512/2235/2235393.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="https://cdn-icons-png.flaticon.com/512/2235/2235393.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="https://cdn-icons-png.flaticon.com/512/2235/2235393.png">
     
     <!-- Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -33,6 +41,19 @@
 
     <!-- Styles -->
     <link rel="stylesheet" href="styles.css">
+    
+    <!-- iOS Fix: Prevent zoom on input focus -->
+    <style>
+        @media screen and (max-device-width: 1024px) {
+            body {
+                -webkit-text-size-adjust: 100%;
+                text-size-adjust: 100%;
+            }
+            input, select, textarea {
+                font-size: 16px !important;
+            }
+        }
+    </style>
 </head>
 <body>
 
@@ -51,7 +72,7 @@
                 <a href="#reviews" class="nav-link">Reviews</a>
             </div>
 
-            <a href="https://wa.me/1234567890?text=Hello%20Willy%20Styles,%20I'd%20like%20to%20book%20an%20appointment" class="btn-book nav-cta" target="_blank">
+            <a href="https://wa.me/2348143690562?text=It's%20WillyStyles%20😎,Get your luxury Cutz from WillyStyles where the blend build confidence🦸" class="btn-book nav-cta" target="_blank">
                 Book Now
             </a>
 
@@ -70,7 +91,7 @@
             <a href="#portfolio">Gallery</a>
             <a href="#experience">Experience</a>
             <a href="#reviews">Reviews</a>
-            <a href="https://wa.me/1234567890?text=Hello%20Willy%20Styles,%20I'd%20like%20to%20book%20an%20appointment" class="mobile-cta" target="_blank">Book Appointment</a>
+            <a href="https://wa.me/2348143690562?text=It's%20WillyStyles%20😎,Get your luxury Cutz from WillyStyles where the blend build confidence🦸" class="mobile-cta" target="_blank">Book Appointment</a>
         </div>
     </div>
 
@@ -94,7 +115,7 @@
                     Skip the shop. We bring the luxury barbershop experience directly to your home or office. Precision cuts, premium products, zero travel time.
                 </p>
                 <div class="hero-btns fade-up">
-                    <a href="https://wa.me/1234567890?text=Hello%20Willy%20Styles,%20I'd%20like%20to%20book%20an%20appointment" class="btn-primary" target="_blank">Book Appointment</a>
+                    <a href="https://wa.me/2348143690562?text=It's%20WillyStyles%20😎,Get your luxury Cutz from WillyStyles where the blend build confidence🦸" class="btn-primary" target="_blank">Book Appointment</a>
                     <a href="#portfolio" class="btn-outline">View Gallery</a>
                 </div>
             </div>
