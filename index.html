@@ -2,498 +2,786 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, user-scalable=yes, viewport-fit=cover">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    
-    <!-- iOS Specific Meta Tags -->
-    <meta name="apple-mobile-web-app-capable" content="yes">
-    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
-    <meta name="apple-mobile-web-app-title" content="Willy Styles">
-    <meta name="format-detection" content="telephone=no">
-    
-    <!-- SEO & GEO -->
-    <title>Willy Styles | Premium Mobile Barber Service</title>
-    <meta name="description" content="Exclusive home-service barbering. Willy Styles brings premium grooming to your doorstep. Book your luxury haircut today.">
-    <meta name="keywords" content="mobile barber, home service haircut, luxury grooming, men's barber near me, Willy Styles">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Willy Styles - Premium Mobile Barber in Delta State. We come to your doorstep in Sapele and beyond. Book home service haircuts now.">
+    <meta name="keywords" content="barber in Delta State, home service barber Nigeria, haircut at home Sapele, mobile barber Warri, Willy Styles">
     <meta name="author" content="Willy Styles">
-    <meta name="robots" content="index, follow">
-    <link rel="canonical" href="https://www.willystyles.com">
-
-    <!-- Open Graph / Social -->
-    <meta property="og:type" content="website">
-    <meta property="og:title" content="Willy Styles | The Art of Grooming at Home">
-    <meta property="og:description" content="Experience luxury barbering without leaving your home.">
-    <meta property="og:image" content="https://images.unsplash.com/photo-1585747860715-2ba37e788b70?w=1200">
+    <title>Mobile Barber in Delta State | Willy Styles Home Service Haircuts</title>
     
-    <!-- Favicon - iOS Compatible -->
-    <link rel="icon" type="image/png" href="https://cdn-icons-png.flaticon.com/512/2235/2235393.png">
-    <link rel="apple-touch-icon" sizes="180x180" href="https://cdn-icons-png.flaticon.com/512/2235/2235393.png">
-    <link rel="icon" type="image/png" sizes="32x32" href="https://cdn-icons-png.flaticon.com/512/2235/2235393.png">
-    <link rel="icon" type="image/png" sizes="16x16" href="https://cdn-icons-png.flaticon.com/512/2235/2235393.png">
-    
-    <!-- Fonts -->
+    <!-- Google Fonts: Inter for clean, modern typography -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;800&family=Manrope:wght@300;400;500;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&display=swap" rel="stylesheet">
     
-    <!-- Bootstrap Icons -->
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.2/font/bootstrap-icons.css">
+    <!-- FontAwesome for Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 
-    <!-- Styles -->
-    <link rel="stylesheet" href="styles.css">
-    
-    <!-- iOS Fix: Prevent zoom on input focus -->
     <style>
-        @media screen and (max-device-width: 1024px) {
-            body {
-                -webkit-text-size-adjust: 100%;
-                text-size-adjust: 100%;
+        /* ============================
+           RESET & VARIABLES
+           ============================ */
+        :root {
+            --bg-color: #ffffff;
+            --bg-secondary: #f4f4f4;
+            --text-main: #111111;
+            --text-muted: #666666;
+            --accent: #000000;
+            --white: #ffffff;
+            --whatsapp-green: #25D366;
+            --transition: all 0.3s ease;
+            --shadow: 0 10px 30px rgba(0,0,0,0.08);
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            color: var(--text-main);
+            background-color: var(--bg-color);
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+
+        a { text-decoration: none; color: inherit; }
+        ul { list-style: none; }
+        img { max-width: 100%; display: block; }
+
+        /* ============================
+           UTILITIES
+           ============================ */
+        .container {
+            width: 90%;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 15px;
+        }
+
+        .section-padding {
+            padding: 80px 0;
+        }
+
+        .text-center { text-align: center; }
+        
+        .section-title {
+            font-size: 2rem;
+            font-weight: 800;
+            margin-bottom: 1rem;
+            text-transform: uppercase;
+            letter-spacing: -1px;
+        }
+
+        .section-subtitle {
+            color: var(--text-muted);
+            margin-bottom: 3rem;
+            font-size: 1.1rem;
+        }
+
+        /* Buttons */
+        .btn {
+            display: inline-block;
+            padding: 14px 28px;
+            font-weight: 600;
+            border-radius: 4px;
+            transition: var(--transition);
+            cursor: pointer;
+            border: 2px solid transparent;
+            font-size: 1rem;
+        }
+
+        .btn-primary {
+            background-color: var(--accent);
+            color: var(--white);
+        }
+
+        .btn-primary:hover {
+            background-color: #333;
+            transform: translateY(-2px);
+        }
+
+        .btn-outline {
+            background-color: transparent;
+            border: 2px solid var(--accent);
+            color: var(--accent);
+        }
+
+        .btn-outline:hover {
+            background-color: var(--accent);
+            color: var(--white);
+        }
+
+        .btn-whatsapp {
+            background-color: var(--whatsapp-green);
+            color: var(--white);
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+        }
+        
+        .btn-whatsapp:hover {
+            background-color: #1ebc57;
+        }
+
+        /* ============================
+           NAVIGATION
+           ============================ */
+        header {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(10px);
+            z-index: 1000;
+            border-bottom: 1px solid rgba(0,0,0,0.05);
+            padding: 15px 0;
+        }
+
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-size: 1.5rem;
+            font-weight: 800;
+            letter-spacing: -1px;
+            text-transform: uppercase;
+        }
+
+        .nav-links {
+            display: none; /* Hidden on mobile by default */
+        }
+
+        .mobile-menu-btn {
+            font-size: 1.5rem;
+            cursor: pointer;
+        }
+
+        /* ============================
+           HERO SECTION
+           ============================ */
+        .hero {
+            height: 90vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            position: relative;
+            background: url('https://images.unsplash.com/photo-1585747860715-2ba37e788b70?ixlib=rb-4.0.3&auto=format&fit=crop&w=1920&q=80') center/cover no-repeat;
+            color: var(--white);
+        }
+
+        .hero-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.7);
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 2;
+            max-width: 600px;
+            padding: 20px;
+            animation: fadeInUp 1s ease;
+        }
+
+        .hero h1 {
+            font-size: 3rem;
+            font-weight: 800;
+            margin-bottom: 20px;
+            line-height: 1.1;
+        }
+
+        .hero p {
+            font-size: 1.2rem;
+            margin-bottom: 30px;
+            color: #ddd;
+        }
+
+        .hero-btns {
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+        }
+
+        /* ============================
+           ABOUT SECTION
+           ============================ */
+        .about-grid {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 40px;
+            align-items: center;
+        }
+
+        .about-img {
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: var(--shadow);
+        }
+
+        .about-text h3 {
+            font-size: 1.8rem;
+            margin-bottom: 15px;
+        }
+
+        .about-text p {
+            margin-bottom: 20px;
+            color: var(--text-muted);
+        }
+
+        /* ============================
+           SERVICES SECTION
+           ============================ */
+        .services {
+            background-color: var(--bg-secondary);
+        }
+
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 25px;
+        }
+
+        .service-card {
+            background: var(--white);
+            padding: 30px;
+            border-radius: 8px;
+            box-shadow: var(--shadow);
+            transition: var(--transition);
+            border: 1px solid transparent;
+        }
+
+        .service-card:hover {
+            transform: translateY(-5px);
+            border-color: var(--accent);
+        }
+
+        .service-icon {
+            font-size: 2rem;
+            margin-bottom: 20px;
+            color: var(--accent);
+        }
+
+        .service-card h3 {
+            font-size: 1.3rem;
+            margin-bottom: 10px;
+        }
+
+        .price {
+            display: block;
+            margin-top: 15px;
+            font-weight: 700;
+            color: var(--accent);
+            font-size: 1.1rem;
+        }
+
+        /* ============================
+           WHY CHOOSE US
+           ============================ */
+        .features-grid {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 30px;
+        }
+
+        .feature-item {
+            text-align: center;
+            padding: 20px;
+        }
+
+        .feature-icon {
+            width: 60px;
+            height: 60px;
+            background: var(--bg-secondary);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 20px;
+            font-size: 1.5rem;
+        }
+
+        /* ============================
+           TESTIMONIALS
+           ============================ */
+        .testimonials {
+            background-color: var(--accent);
+            color: var(--white);
+        }
+
+        .testimonials .section-title { color: var(--white); }
+        .testimonials .section-subtitle { color: #ccc; }
+
+        .testimonial-grid {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 30px;
+        }
+
+        .testimonial-card {
+            background: rgba(255,255,255,0.1);
+            padding: 30px;
+            border-radius: 8px;
+            backdrop-filter: blur(5px);
+        }
+
+        .stars { color: #FFD700; margin-bottom: 15px; }
+
+        .client-name {
+            margin-top: 20px;
+            font-weight: 700;
+            font-size: 0.9rem;
+            opacity: 0.8;
+        }
+
+        /* ============================
+           BOOKING SECTION
+           ============================ */
+        .booking-container {
+            max-width: 600px;
+            margin: 0 auto;
+            background: var(--white);
+            padding: 40px;
+            border-radius: 12px;
+            box-shadow: var(--shadow);
+            border: 1px solid #eee;
+        }
+
+        .form-group {
+            margin-bottom: 20px;
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 8px;
+            font-weight: 600;
+            font-size: 0.9rem;
+        }
+
+        .form-control {
+            width: 100%;
+            padding: 12px;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            font-family: inherit;
+            font-size: 1rem;
+        }
+
+        .form-control:focus {
+            outline: none;
+            border-color: var(--accent);
+        }
+
+        .booking-note {
+            font-size: 0.85rem;
+            color: var(--text-muted);
+            margin-top: 15px;
+            text-align: center;
+        }
+
+        /* ============================
+           GALLERY
+           ============================ */
+        .gallery-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 10px;
+        }
+
+        .gallery-item {
+            height: 250px;
+            overflow: hidden;
+            border-radius: 4px;
+        }
+
+        .gallery-item img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.5s ease;
+        }
+
+        .gallery-item:hover img {
+            transform: scale(1.1);
+        }
+
+        /* ============================
+           CONTACT & FOOTER
+           ============================ */
+        .contact-section {
+            background: var(--bg-secondary);
+            text-align: center;
+        }
+
+        .contact-info {
+            margin-bottom: 30px;
+            font-size: 1.1rem;
+        }
+
+        footer {
+            background: var(--accent);
+            color: var(--white);
+            padding: 40px 0;
+            text-align: center;
+            font-size: 0.9rem;
+        }
+
+        .social-links {
+            margin-bottom: 20px;
+        }
+
+        .social-links a {
+            color: var(--white);
+            font-size: 1.5rem;
+            margin: 0 10px;
+            transition: var(--transition);
+        }
+
+        .social-links a:hover { color: #ccc; }
+
+        /* ============================
+           STICKY WHATSAPP BUTTON
+           ============================ */
+        .sticky-whatsapp {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            background-color: var(--whatsapp-green);
+            color: white;
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 30px;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+            z-index: 9999;
+            transition: transform 0.3s;
+        }
+
+        .sticky-whatsapp:hover {
+            transform: scale(1.1);
+        }
+
+        /* ============================
+           ANIMATIONS
+           ============================ */
+        @keyframes fadeInUp {
+            from { opacity: 0; transform: translateY(30px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        /* ============================
+           MEDIA QUERIES (Desktop)
+           ============================ */
+        @media (min-width: 768px) {
+            .hero h1 { font-size: 4.5rem; }
+            .hero-btns { flex-direction: row; justify-content: center; }
+            
+            .nav-links {
+                display: flex;
+                gap: 30px;
             }
-            input, select, textarea {
-                font-size: 16px !important;
+            .mobile-menu-btn { display: none; }
+            
+            .about-grid, .features-grid, .testimonial-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+            
+            .gallery-grid {
+                grid-template-columns: repeat(4, 1fr);
             }
         }
     </style>
 </head>
 <body>
 
+    <!-- Sticky WhatsApp Button -->
+    <a href="https://wa.me/2348000000000" class="sticky-whatsapp" aria-label="Chat on WhatsApp">
+        <i class="fab fa-whatsapp"></i>
+    </a>
+
     <!-- Navigation -->
-    <nav class="navbar">
-        <div class="container nav-container">
-            <a href="#" class="logo">
-                WILLY <span class="accent">STYLES</span>
-            </a>
-            
-            <div class="nav-links">
-                <a href="#about" class="nav-link">About</a>
-                <a href="#services" class="nav-link">Services</a>
-                <a href="#portfolio" class="nav-link">Gallery</a>
-                <a href="#experience" class="nav-link">Experience</a>
-                <a href="#reviews" class="nav-link">Reviews</a>
-            </div>
-
-            <a href="https://wa.me/2348143690562?text=It's%20WillyStyles%20😎,Get your luxury Cutz from WillyStyles where the blend build confidence🦸" class="btn-book nav-cta" target="_blank">
-                Book Now
-            </a>
-
-            <div class="mobile-toggle">
-                <span></span>
-                <span></span>
-            </div>
-        </div>
-    </nav>
-
-    <!-- Mobile Menu Overlay -->
-    <div class="mobile-menu">
-        <div class="mobile-links">
-            <a href="#about">About</a>
-            <a href="#services">Services</a>
-            <a href="#portfolio">Gallery</a>
-            <a href="#experience">Experience</a>
-            <a href="#reviews">Reviews</a>
-            <a href="https://wa.me/2348143690562?text=It's%20WillyStyles%20😎,Get your luxury Cutz from WillyStyles where the blend build confidence🦸" class="mobile-cta" target="_blank">Book Appointment</a>
-        </div>
-    </div>
-
-    <!-- Hero Section -->
-    <header class="hero">
-        <div class="hero-bg">
-            <img src="https://images.unsplash.com/photo-1585747860715-2ba37e788b70?q=80&w=2070&auto=format&fit=crop" alt="Barber Tools" class="parallax-bg">
-            <div class="overlay"></div>
-        </div>
-        
-        <div class="container hero-content">
-            <div class="hero-text">
-                <p class="subtitle fade-up">Exclusive Home Service</p>
-                <h1 class="display-title split-text">
-                    <span>Refined</span>
-                    <span>Grooming</span>
-                    <span>At Your</span>
-                    <span class="accent-text">Doorstep</span>
-                </h1>
-                <p class="hero-desc fade-up">
-                    Skip the shop. We bring the luxury barbershop experience directly to your home or office. Precision cuts, premium products, zero travel time.
-                </p>
-                <div class="hero-btns fade-up">
-                    <a href="https://wa.me/2348143690562?text=It's%20WillyStyles%20😎,Get your luxury Cutz from WillyStyles where the blend build confidence🦸" class="btn-primary" target="_blank">Book Appointment</a>
-                    <a href="#portfolio" class="btn-outline">View Gallery</a>
+    <header>
+        <div class="container">
+            <nav>
+                <div class="logo">Willy Styles</div>
+                <ul class="nav-links">
+                    <li><a href="#about">About</a></li>
+                    <li><a href="#services">Services</a></li>
+                    <li><a href="#gallery">Gallery</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                </ul>
+                <div class="mobile-menu-btn">
+                    <i class="fas fa-bars"></i>
                 </div>
-            </div>
-        </div>
-
-        <div class="scroll-indicator">
-            <span>Scroll</span>
-            <div class="line"></div>
+            </nav>
         </div>
     </header>
 
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="hero-overlay"></div>
+        <div class="hero-content">
+            <h1>Clean Haircuts at Your Doorstep</h1>
+            <p>No queues. No stress. Premium grooming at your convenience in Delta State.</p>
+            <div class="hero-btns">
+                <a href="#booking" class="btn btn-whatsapp">
+                    <i class="fab fa-whatsapp"></i> Book via WhatsApp
+                </a>
+                <a href="#services" class="btn btn-outline" style="border-color: white; color: white;">
+                    View Services
+                </a>
+            </div>
+        </div>
+    </section>
+
     <!-- About Section -->
-    <section id="about" class="section about">
+    <section id="about" class="section-padding">
         <div class="container">
-            <div class="grid-2">
-                <div class="about-img-wrapper reveal-img">
-                    <img src="https://images.unsplash.com/photo-1621605815971-fbc98d665033?q=80&w=1000&auto=format&fit=crop" alt="Professional Barber at Work" class="main-img">
-                    <div class="img-badge">
-                        <span class="number">5+</span>
-                        <span class="label">Years Exp.</span>
-                    </div>
+            <div class="about-grid">
+                <div class="about-img">
+                    <img src="https://images.unsplash.com/photo-1621605815971-fbc98d665033?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Barber working">
                 </div>
-                <div class="about-content">
-                    <h4 class="section-subtitle">The Concept</h4>
+                <div class="about-text">
                     <h2 class="section-title">We Come To You</h2>
-                    <p class="text-lg">
-                        Time is your most valuable asset. Willy Styles eliminates the commute and the wait. We arrive fully equipped with professional chairs, sanitization stations, and premium tools.
-                    </p>
-                    <ul class="feature-list">
-                        <li>
-                            <i class="bi bi-check-circle-fill"></i>
-                            <div>
-                                <strong>Fully Mobile Setup</strong>
-                                <span>We bring everything needed for a perfect cut.</span>
-                            </div>
-                        </li>
-                        <li>
-                            <i class="bi bi-check-circle-fill"></i>
-                            <div>
-                                <strong>Private & Comfortable</strong>
-                                <span>Groom in the comfort of your own space.</span>
-                            </div>
-                        </li>
-                        <li>
-                            <i class="bi bi-check-circle-fill"></i>
-                            <div>
-                                <strong>Premium Hygiene</strong>
-                                <span>Sterilized tools and fresh capes for every client.</span>
-                            </div>
-                        </li>
-                    </ul>
+                    <p><strong>Willy Styles</strong> isn't just a barbershop—it's a mobile grooming experience based in Sapele, serving the entirety of Delta State.</p>
+                    <p>We understand that your time is valuable. Sitting in a queue at a local shop shouldn't be part of your grooming routine. We bring the chair, the clippers, and the expertise directly to your living room or office.</p>
+                    <p>Expect professional hygiene, sharp fades, and a relaxed environment every single time.</p>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Services Section - ELEVATED -->
-    <section id="services" class="section services bg-dark">
+    <!-- Services Section -->
+    <section id="services" class="section-padding services">
         <div class="container">
-            <div class="section-header center">
-                <h4 class="section-subtitle">Our Expertise</h4>
-                <h2 class="section-title">Premium Services</h2>
-                <p class="section-desc">Tailored grooming experiences designed for the modern gentleman</p>
+            <div class="text-center">
+                <h2 class="section-title">Our Services</h2>
+                <p class="section-subtitle">Premium cuts, delivered to your door.</p>
             </div>
-
             <div class="services-grid">
-                <!-- Card 1 -->
-                <div class="service-card reveal-card">
-                    <div class="service-image">
-                        <img src="https://images.unsplash.com/photo-1605497788044-5a32c7078486?q=80&w=600&auto=format&fit=crop" alt="Signature Cut">
-                        <div class="service-overlay"></div>
-                    </div>
-                    <div class="service-content">
-                        <div class="service-icon">
-                            <i class="bi bi-scissors"></i>
-                        </div>
-                        <h3>Signature Cut</h3>
-                        <p class="service-desc">Precision haircut tailored to your head shape and style preferences. Includes wash, cut, and style.</p>
-                        <ul class="service-features">
-                            <li><i class="bi bi-check2"></i> Personalized Consultation</li>
-                            <li><i class="bi bi-check2"></i> Precision Cutting</li>
-                            <li><i class="bi bi-check2"></i> Hot Towel Finish</li>
-                            <li><i class="bi bi-check2"></i> Styling & Product Application</li>
-                        </ul>
-                        <a href="https://wa.me/1234567890?text=I'm%20interested%20in%20the%20Signature%20Cut%20service" class="service-link" target="_blank">
-                            Book This Service <i class="bi bi-arrow-right"></i>
-                        </a>
-                    </div>
+                <!-- Service 1 -->
+                <div class="service-card">
+                    <div class="service-icon"><i class="fas fa-cut"></i></div>
+                    <h3>Classic Haircut</h3>
+                    <p>A timeless cut tailored to your head shape. Includes wash and style.</p>
+                    <span class="price">₦2,500 - ₦3,500</span>
                 </div>
-
-                <!-- Card 2 -->
-                <div class="service-card reveal-card">
-                    <div class="service-image">
-                        <img src="https://images.unsplash.com/photo-1599351431202-1e0f0137899a?q=80&w=600&auto=format&fit=crop" alt="Beard Sculpting">
-                        <div class="service-overlay"></div>
-                    </div>
-                    <div class="service-content">
-                        <div class="service-icon">
-                            <i class="bi bi-brush"></i>
-                        </div>
-                        <h3>Beard Sculpting</h3>
-                        <p class="service-desc">Complete beard maintenance. Trimming, shaping, lining, and conditioning oil application.</p>
-                        <ul class="service-features">
-                            <li><i class="bi bi-check2"></i> Shape & Trim</li>
-                            <li><i class="bi bi-check2"></i> Razor Line-up</li>
-                            <li><i class="bi bi-check2"></i> Beard Oil Treatment</li>
-                            <li><i class="bi bi-check2"></i> Moisturizing Balm</li>
-                        </ul>
-                        <a href="https://wa.me/1234567890?text=I'm%20interested%20in%20the%20Beard%20Sculpting%20service" class="service-link" target="_blank">
-                            Book This Service <i class="bi bi-arrow-right"></i>
-                        </a>
-                    </div>
+                <!-- Service 2 -->
+                <div class="service-card">
+                    <div class="service-icon"><i class="fas fa-layer-group"></i></div>
+                    <h3>Skin Fade</h3>
+                    <p>Sharp, clean gradient fade. The signature Willy Styles look.</p>
+                    <span class="price">₦3,500 - ₦4,500</span>
                 </div>
-
-                <!-- Card 3 -->
-                <div class="service-card reveal-card featured">
-                    <div class="featured-badge">Most Popular</div>
-                    <div class="service-image">
-                        <img src="https://images.unsplash.com/photo-1585747860715-2ba37e788b70?q=80&w=600&auto=format&fit=crop" alt="Full Package">
-                        <div class="service-overlay"></div>
-                    </div>
-                    <div class="service-content">
-                        <div class="service-icon">
-                            <i class="bi bi-stars"></i>
-                        </div>
-                        <h3>The Full Package</h3>
-                        <p class="service-desc">The ultimate grooming experience. Haircut, beard trim, facial scrub, and black mask treatment.</p>
-                        <ul class="service-features">
-                            <li><i class="bi bi-check2"></i> Full Haircut & Style</li>
-                            <li><i class="bi bi-check2"></i> Beard Grooming</li>
-                            <li><i class="bi bi-check2"></i> Facial Cleanse & Scrub</li>
-                            <li><i class="bi bi-check2"></i> Black Mask Treatment</li>
-                            <li><i class="bi bi-check2"></i> Premium Products</li>
-                        </ul>
-                        <a href="https://wa.me/1234567890?text=I'm%20interested%20in%20the%20Full%20Package%20service" class="service-link" target="_blank">
-                            Book This Service <i class="bi bi-arrow-right"></i>
-                        </a>
-                    </div>
+                <!-- Service 3 -->
+                <div class="service-card">
+                    <div class="service-icon"><i class="fas fa-user-tie"></i></div>
+                    <h3>Beard Grooming</h3>
+                    <p>Beard trim, shape up, and oil treatment for a sharp finish.</p>
+                    <span class="price">₦2,000 - ₦3,000</span>
+                </div>
+                <!-- Service 4 -->
+                <div class="service-card">
+                    <div class="service-icon"><i class="fas fa-child"></i></div>
+                    <h3>Kids Haircut</h3>
+                    <p>Gentle, patient service for the little ones. Make them look fresh.</p>
+                    <span class="price">₦2,000 - ₦2,500</span>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Portfolio Section -->
-    <section id="portfolio" class="section portfolio">
+    <!-- Why Choose Us -->
+    <section class="section-padding">
         <div class="container">
-            <div class="section-header">
-                <h4 class="section-subtitle">Portfolio</h4>
-                <h2 class="section-title">Signature Styles</h2>
-                <p class="section-desc">A curated collection of our finest transformations</p>
+            <div class="text-center">
+                <h2 class="section-title">Why Choose Willy Styles?</h2>
+                <p class="section-subtitle">The smart way to get a haircut.</p>
             </div>
-            
-            <div class="portfolio-grid">
-                <div class="portfolio-item reveal-img">
-                    <img src="https://images.unsplash.com/photo-1605497788044-5a32c7078486?q=80&w=800&auto=format&fit=crop" alt="Skin Fade Haircut">
-                    <div class="overlay">
-                        <h3>Skin Fade</h3>
-                        <p>Classic Taper</p>
-                    </div>
+            <div class="features-grid">
+                <div class="feature-item">
+                    <div class="feature-icon"><i class="fas fa-home"></i></div>
+                    <h3>Home Service</h3>
+                    <p>We travel to Sapele, Warri, Ughelli, and beyond.</p>
                 </div>
-                <div class="portfolio-item reveal-img">
-                    <img src="https://images.unsplash.com/photo-1622286342621-4bd786c2447c?q=80&w=800&auto=format&fit=crop" alt="Modern Pompadour Style">
-                    <div class="overlay">
-                        <h3>Modern Pompadour</h3>
-                        <p>Volume & Texture</p>
-                    </div>
+                <div class="feature-item">
+                    <div class="feature-icon"><i class="fas fa-clock"></i></div>
+                    <h3>No Waiting Time</h3>
+                    <p>Book a slot and we arrive on time. No queues.</p>
                 </div>
-                <div class="portfolio-item reveal-img">
-                    <img src="https://images.unsplash.com/photo-1599351431202-1e0f0137899a?q=80&w=800&auto=format&fit=crop" alt="Beard Grooming">
-                    <div class="overlay">
-                        <h3>Beard Sculpt</h3>
-                        <p>Grooming</p>
-                    </div>
+                <div class="feature-item">
+                    <div class="feature-icon"><i class="fas fa-tags"></i></div>
+                    <h3>Affordable Luxury</h3>
+                    <p>Premium quality at prices that make sense.</p>
                 </div>
-                <div class="portfolio-item reveal-img">
-                    <img src="https://images.unsplash.com/photo-1503951914875-452162b7f30a?q=80&w=800&auto=format&fit=crop" alt="Textured Crop Cut">
-                    <div class="overlay">
-                        <h3>Crop Cut</h3>
-                        <p>Textured Top</p>
-                    </div>
-                </div>
-                <div class="portfolio-item reveal-img">
-                    <img src="https://images.unsplash.com/photo-1620331311520-246422fd82f9?q=80&w=800&auto=format&fit=crop" alt="Buzz Cut Style">
-                    <div class="overlay">
-                        <h3>Buzz Cut</h3>
-                        <p>Clean & Sharp</p>
-                    </div>
-                </div>
-                <div class="portfolio-item reveal-img">
-                    <img src="https://images.unsplash.com/photo-1605497788044-5a9c9c3b5c3e?q=80&w=800&auto=format&fit=crop" alt="Full Grooming Package">
-                    <div class="overlay">
-                        <h3>Full Package</h3>
-                        <p>Complete Service</p>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Experience Section (Replaces FAQ) -->
-    <section id="experience" class="section experience bg-dark">
-        <div class="container">
-            <div class="section-header center">
-                <h4 class="section-subtitle">The Journey</h4>
-                <h2 class="section-title">What to Expect</h2>
-                <p class="section-desc">Your premium grooming experience from start to finish</p>
-            </div>
-
-            <div class="experience-grid">
-                <div class="experience-card reveal-card">
-                    <div class="exp-number">01</div>
-                    <div class="exp-icon">
-                        <i class="bi bi-calendar-check"></i>
-                    </div>
-                    <h3>Easy Booking</h3>
-                    <p>Send us a message via WhatsApp with your preferred date, time, and service. We'll confirm your appointment instantly.</p>
-                    <div class="exp-image">
-                        <img src="https://images.unsplash.com/photo-1563986768609-322da13575f3?q=80&w=600&auto=format&fit=crop" alt="Booking">
-                    </div>
-                </div>
-
-                <div class="experience-card reveal-card">
-                    <div class="exp-number">02</div>
-                    <div class="exp-icon">
-                        <i class="bi bi-truck"></i>
-                    </div>
-                    <h3>We Arrive</h3>
-                    <p>Our barber arrives at your location fully equipped with professional tools, sanitization station, and premium products.</p>
-                    <div class="exp-image">
-                        <img src="https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?q=80&w=600&auto=format&fit=crop" alt="Arrival">
-                    </div>
-                </div>
-
-                <div class="experience-card reveal-card">
-                    <div class="exp-number">03</div>
-                    <div class="exp-icon">
-                        <i class="bi bi-scissors"></i>
-                    </div>
-                    <h3>Premium Service</h3>
-                    <p>Relax while we deliver a personalized grooming experience with attention to every detail.</p>
-                    <div class="exp-image">
-                        <img src="https://images.unsplash.com/photo-1621605815971-fbc98d665033?q=80&w=600&auto=format&fit=crop" alt="Service">
-                    </div>
-                </div>
-
-                <div class="experience-card reveal-card">
-                    <div class="exp-number">04</div>
-                    <div class="exp-icon">
-                        <i class="bi bi-star"></i>
-                    </div>
-                    <h3>Look Sharp</h3>
-                    <p>Walk away feeling refreshed and confident. We handle all cleanup, leaving your space spotless.</p>
-                    <div class="exp-image">
-                        <img src="https://images.unsplash.com/photo-1503951914875-452162b7f30a?q=80&w=600&auto=format&fit=crop" alt="Result">
-                    </div>
+                <div class="feature-item">
+                    <div class="feature-icon"><i class="fas fa-pump-soap"></i></div>
+                    <h3>Hygiene First</h3>
+                    <p>Sterilized tools and fresh linens for every client.</p>
                 </div>
             </div>
         </div>
     </section>
 
     <!-- Testimonials -->
-    <section id="reviews" class="section reviews">
+    <section class="section-padding testimonials">
         <div class="container">
-            <div class="section-header center">
-                <h4 class="section-subtitle">Testimonials</h4>
-                <h2 class="section-title">Client Words</h2>
+            <div class="text-center">
+                <h2 class="section-title">Client Love</h2>
+                <p class="section-subtitle">What people in Delta State are saying.</p>
+            </div>
+            <div class="testimonial-grid">
+                <div class="testimonial-card">
+                    <div class="stars">★★★★★</div>
+                    <p>"Guy came to my house and gave me one of the cleanest fades I've had in years. No stress of going to the shop. Highly recommend Willy Styles!"</p>
+                    <div class="client-name">- Emeka O., Sapele</div>
+                </div>
+                <div class="testimonial-card">
+                    <div class="stars">★★★★★</div>
+                    <p>"Best mobile barber service. He was punctual, polite, and the beard trim was sharp. Will definitely book again."</p>
+                    <div class="client-name">- Chinedu K., Warri</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Booking Section -->
+    <section id="booking" class="section-padding">
+        <div class="container">
+            <div class="text-center">
+                <h2 class="section-title">Book Your Cut</h2>
+                <p class="section-subtitle">Fill the form below to book instantly via WhatsApp.</p>
             </div>
             
-            <div class="reviews-slider">
-                <div class="review-card">
-                    <div class="stars">
-                        <i class="bi bi-star-fill"></i>
-                        <i class="bi bi-star-fill"></i>
-                        <i class="bi bi-star-fill"></i>
-                        <i class="bi bi-star-fill"></i>
-                        <i class="bi bi-star-fill"></i>
+            <div class="booking-container">
+                <form id="bookingForm">
+                    <div class="form-group">
+                        <label>Your Name</label>
+                        <input type="text" id="name" class="form-control" placeholder="e.g. John Doe" required>
                     </div>
-                    <p class="review-text">"Honestly the best cut I've had in years. The convenience of having him come to my apartment is a game changer. Highly professional."</p>
-                    <div class="reviewer">
-                        <h5>Marcus J.</h5>
-                        <span>Entrepreneur</span>
+                    <div class="form-group">
+                        <label>Location (Area in Delta State)</label>
+                        <input type="text" id="location" class="form-control" placeholder="e.g. Sapele Town, Warri GRA" required>
                     </div>
-                </div>
-                <div class="review-card">
-                    <div class="stars">
-                        <i class="bi bi-star-fill"></i>
-                        <i class="bi bi-star-fill"></i>
-                        <i class="bi bi-star-fill"></i>
-                        <i class="bi bi-star-fill"></i>
-                        <i class="bi bi-star-fill"></i>
+                    <div class="form-group">
+                        <label>Service Required</label>
+                        <select id="service" class="form-control">
+                            <option value="Haircut">Classic Haircut</option>
+                            <option value="Skin Fade">Skin Fade</option>
+                            <option value="Beard Grooming">Beard Grooming</option>
+                            <option value="Kids Cut">Kids Haircut</option>
+                            <option value="Combo">Full Package (Hair + Beard)</option>
+                        </select>
                     </div>
-                    <p class="review-text">"Willy is a true artist. He took his time, explained the style, and the fade was flawless. Worth every penny for the home service."</p>
-                    <div class="reviewer">
-                        <h5>David L.</h5>
-                        <span>Software Engineer</span>
+                    <div class="form-group">
+                        <label>Preferred Date & Time</label>
+                        <input type="datetime-local" id="time" class="form-control" required>
                     </div>
-                </div>
-                <div class="review-card">
-                    <div class="stars">
-                        <i class="bi bi-star-fill"></i>
-                        <i class="bi bi-star-fill"></i>
-                        <i class="bi bi-star-fill"></i>
-                        <i class="bi bi-star-fill"></i>
-                        <i class="bi bi-star-fill"></i>
-                    </div>
-                    <p class="review-text">"Finally a barber who understands modern styles but respects classic technique. The setup he brings is impressive."</p>
-                    <div class="reviewer">
-                        <h5>Sarah T.</h5>
-                        <span>For my husband</span>
-                    </div>
-                </div>
+                    <button type="submit" class="btn btn-whatsapp" style="width: 100%; justify-content: center;">
+                        <i class="fab fa-whatsapp"></i> Send Booking Request
+                    </button>
+                    <p class="booking-note">You will be redirected to WhatsApp to confirm your appointment.</p>
+                </form>
             </div>
         </div>
     </section>
 
-    <!-- Service Areas & CTA -->
-    <section class="section areas-cta">
+    <!-- Gallery -->
+    <section id="gallery" class="section-padding">
         <div class="container">
-            <div class="grid-2">
-                <div class="areas-block">
-                    <h3 class="mb-4">Service Areas</h3>
-                    <p class="text-muted mb-4">We bring premium grooming to your doorstep across these locations:</p>
-                    <div class="tags-container">
-                        <span class="tag"><i class="bi bi-geo-alt"></i> Downtown</span>
-                        <span class="tag"><i class="bi bi-geo-alt"></i> Westside</span>
-                        <span class="tag"><i class="bi bi-geo-alt"></i> North Hills</span>
-                        <span class="tag"><i class="bi bi-geo-alt"></i> Riverside</span>
-                        <span class="tag"><i class="bi bi-geo-alt"></i> Midtown</span>
-                        <span class="tag"><i class="bi bi-geo-alt"></i> Uptown</span>
-                        <span class="tag"><i class="bi bi-geo-alt"></i> South Park</span>
-                        <span class="tag"><i class="bi bi-geo-alt"></i> East End</span>
-                    </div>
-                </div>
-                
-                <div class="cta-block">
-                    <div class="cta-content">
-                        <h3>Ready to Experience<br>Premium Grooming?</h3>
-                        <p>Book your appointment today and discover the convenience of luxury barbering at home.</p>
-                        <a href="https://wa.me/1234567890?text=Hello%20Willy%20Styles,%20I'd%20like%20to%20book%20an%20appointment" class="btn-primary btn-large" target="_blank">
-                            <i class="bi bi-whatsapp"></i> Book via WhatsApp
-                        </a>
-                        <p class="cta-note"><i class="bi bi-clock"></i> We typically respond within 1 hour</p>
-                    </div>
-                </div>
+            <div class="text-center">
+                <h2 class="section-title">The Gallery</h2>
+                <p class="section-subtitle">Recent cuts by Willy Styles.</p>
+            </div>
+            <div class="gallery-grid">
+                <div class="gallery-item"><img src="https://images.unsplash.com/photo-1599351431202-1e0f0137899a?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" alt="Haircut Style"></div>
+                <div class="gallery-item"><img src="https://images.unsplash.com/photo-1622286342621-4bd786c2447c?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" alt="Fade Cut"></div>
+                <div class="gallery-item"><img src="https://images.unsplash.com/photo-1503951914875-452162b7f30a?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" alt="Barber Tools"></div>
+                <div class="gallery-item"><img src="https://images.unsplash.com/photo-1593702295094-aea8c5c13589?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" alt="Beard Trim"></div>
             </div>
         </div>
     </section>
 
-    <!-- Footer -->
-    <footer class="footer">
+    <!-- Contact & Footer -->
+    <section id="contact" class="section-padding contact-section">
         <div class="container">
-            <div class="footer-content">
-                <div class="footer-brand">
-                    <h2>WILLY STYLES</h2>
-                    <p>Premium Mobile Barbering</p>
-                </div>
-                <div class="footer-social">
-                    <a href="https://instagram.com/willystyles" target="_blank" aria-label="Instagram"><i class="bi bi-instagram"></i></a>
-                    <a href="https://tiktok.com/@willystyles" target="_blank" aria-label="TikTok"><i class="bi bi-tiktok"></i></a>
-                    <a href="mailto:book@willystyles.com" aria-label="Email"><i class="bi bi-envelope"></i></a>
-                </div>
+            <h2 class="section-title">Ready for a Fresh Cut?</h2>
+            <div class="contact-info">
+                <p><i class="fas fa-map-marker-alt"></i> Based in Sapele, Serving all Delta State</p>
+                <p><i class="fas fa-phone"></i> +234 800 000 0000</p>
             </div>
-            <div class="footer-bottom">
-                <p>&copy; 2024 Willy Styles. All Rights Reserved.</p>
+            <a href="https://wa.me/2348000000000" class="btn btn-primary">Chat on WhatsApp Now</a>
+        </div>
+    </section>
+
+    <footer>
+        <div class="container">
+            <div class="social-links">
+                <a href="#"><i class="fab fa-instagram"></i></a>
+                <a href="#"><i class="fab fa-tiktok"></i></a>
+                <a href="#"><i class="fab fa-twitter"></i></a>
             </div>
+            <p>&copy; 2023 Willy Styles. Premium Mobile Barbing.</p>
         </div>
     </footer>
 
-    <!-- Sticky Mobile CTA -->
-    <a href="https://wa.me/1234567890?text=Hello%20Willy%20Styles,%20I'd%20like%20to%20book%20an%20appointment" class="sticky-cta" target="_blank">
-        <i class="bi bi-whatsapp"></i>
-        <span>Book Now</span>
-    </a>
-
     <!-- Scripts -->
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
-    <script src="script.js"></script>
+    <script>
+        // Booking Form Logic - Sends data to WhatsApp
+        document.getElementById('bookingForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            const name = document.getElementById('name').value;
+            const location = document.getElementById('location').value;
+            const service = document.getElementById('service').value;
+            const time = document.getElementById('time').value;
+
+            // Format the message
+            const message = `Hello Willy Styles! I want to book an appointment.%0A%0A*Name:* ${name}%0A*Location:* ${location}%0A*Service:* ${service}%0A*Time:* ${time}`;
+            
+            // Replace with actual phone number
+            const phoneNumber = "2348000000000"; 
+            
+            // Open WhatsApp
+            window.open(`https://wa.me/${phoneNumber}?text=${message}`, '_blank');
+        });
+
+        // Mobile Menu Toggle
+        const menuBtn = document.querySelector('.mobile-menu-btn');
+        const navLinks = document.querySelector('.nav-links');
+
+        menuBtn.addEventListener('click', () => {
+            // Simple toggle for mobile menu visibility
+            if(navLinks.style.display === 'flex') {
+                navLinks.style.display = 'none';
+            } else {
+                navLinks.style.display = 'flex';
+                navLinks.style.flexDirection = 'column';
+                navLinks.style.position = 'absolute';
+                navLinks.style.top = '60px';
+                navLinks.style.left = '0';
+                navLinks.style.width = '100%';
+                navLinks.style.background = 'white';
+                navLinks.style.padding = '20px';
+                navLinks.style.boxShadow = '0 10px 10px rgba(0,0,0,0.1)';
+            }
+        });
+    </script>
 </body>
 </html>
