@@ -171,5 +171,27 @@ Please confirm availability. Thank you!`;
     // Trigger on load and scroll
     window.addEventListener('load', animateOnScroll);
     window.addEventListener('scroll', animateOnScroll);
+
+    // ========================================
+// FAQ / Q&A TOGGLE
+// ========================================
+const faqQuestions = document.querySelectorAll('.faq-question');
+
+faqQuestions.forEach(question => {
+    question.addEventListener('click', () => {
+        const answer = question.nextElementSibling;
+        
+        // Toggle visibility
+        const isVisible = answer.style.display === 'block';
+        answer.style.display = isVisible ? 'none' : 'block';
+        
+        // Optional: Close other open answers
+        faqQuestions.forEach(q => {
+            if (q !== question) {
+                q.nextElementSibling.style.display = 'none';
+            }
+        });
+    });
+});
     
 });
