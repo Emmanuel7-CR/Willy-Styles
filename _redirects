@@ -1,9 +1,5 @@
-# 1. Redirect www to non-www
+# Redirect www to non-www
 https://www.willystyles.netlify.app/* https://willystyles.netlify.app/:splat 301!
 
-# 2. Force trailing slash for all pages (optional, keeps URLs consistent)
-https://willystyles.netlify.app/* https://willystyles.netlify.app/:splat/ 301!
-
-# 3. Fallback for single-page app (optional)
-# Uncomment only if you have SPA behavior
+# Fallback for single-page app (optional)
 # /* /index.html 200
