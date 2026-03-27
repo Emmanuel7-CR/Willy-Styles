@@ -1,0 +1,9 @@
+# Redirect www to non-www
+https://www.willystyles.netlify.app/* https://willystyles.netlify.app/:splat 301!
+
+# Force trailing slashes (optional, keeps URLs consistent)
+https://willystyles.netlify.app/* https://willystyles.netlify.app/:splat/ 301!
+
+# Fallback for all other unmatched routes to index.html (for SPA)
+# Optional if you have a single-page app
+/* /index.html 200

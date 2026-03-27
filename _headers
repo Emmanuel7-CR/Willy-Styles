@@ -1,2 +1,10 @@
 /*
+
+  # Force canonical header for all pages
   Link: <https://willystyles.netlify.app/>; rel="canonical"
+  
+  # Optional: security and performance headers (good practice)
+  X-Frame-Options: DENY
+  X-Content-Type-Options: nosniff
+  Referrer-Policy: strict-origin-when-cross-origin
+  Cache-Control: max-age=0, must-revalidate
