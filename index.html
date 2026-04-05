@@ -32,71 +32,36 @@
   "@context": "https://schema.org",
   "@graph": [
     {
-      "@type": "LocalBusiness",
+      "@type": "BarberShop",
       "name": "Willy Styles",
       "image": "https://willystyles.netlify.app/assets/preview.jpg",
+      "@id": "https://willystyles.netlify.app/#organization",
       "url": "https://willystyles.netlify.app/",
       "telephone": "+2348143690562",
-      "areaServed": {
-        "@type": "Place",
-        "name": "Delta State, Nigeria"
-      },
+      "priceRange": "₦₦",
+      "areaServed": [
+        "Sapele",
+        "Warri",
+        "Ughelli",
+        "Oghara",
+        "Delta State"
+      ],
       "address": {
         "@type": "PostalAddress",
         "addressLocality": "Sapele",
         "addressRegion": "Delta State",
         "addressCountry": "NG"
       },
-       "geo": {
+      "geo": {
         "@type": "GeoCoordinates",
         "latitude": 5.8897,
         "longitude": 5.6796
       },
-      "description": "Willy Styles – Premium mobile barber in Delta State. Home service haircuts in Sapele, Warri, Ughelli & beyond. Book now!",
-      "serviceType": "Mobile Barber",
-       "openingHoursSpecification": [
-        {
-          "@type": "OpeningHoursSpecification",
-          "dayOfWeek": "Monday",
-          "opens": "10:00",
-          "closes": "20:00"
-        },
-        {
-          "@type": "OpeningHoursSpecification",
-          "dayOfWeek": "Tuesday",
-          "opens": "10:00",
-          "closes": "20:00"
-        },
-        {
-          "@type": "OpeningHoursSpecification",
-          "dayOfWeek": "Wednesday",
-          "opens": "10:00",
-          "closes": "20:00"
-        },
-        {
-          "@type": "OpeningHoursSpecification",
-          "dayOfWeek": "Thursday",
-          "opens": "10:00",
-          "closes": "20:00"
-        },
-        {
-          "@type": "OpeningHoursSpecification",
-          "dayOfWeek": "Friday",
-          "opens": "10:00",
-          "closes": "15:00"
-        },
-        {
-          "@type": "OpeningHoursSpecification",
-          "dayOfWeek": "Saturday",
-          "opens": "12:00",
-          "closes": "20:00"
-        },
-        {
-          "@type": "OpeningHoursSpecification",
-          "dayOfWeek": "Sunday",
-          "opens": "12:00",
-          "closes": "20:00"
-        }
+      "description": "Willy Styles – Premium mobile barber in Delta State. Professional home service haircuts and grooming in Sapele, Warri, Ughelli, Oghara & beyond.",
+      "openingHoursSpecification": [
+        { "@type": "OpeningHoursSpecification", "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday"], "opens": "10:00", "closes": "20:00" },
+        { "@type": "OpeningHoursSpecification", "dayOfWeek": "Friday", "opens": "10:00", "closes": "15:00" },
+        { "@type": "OpeningHoursSpecification", "dayOfWeek": ["Saturday", "Sunday"], "opens": "12:00", "closes": "20:00" }
       ],
       "sameAs": [
         "https://www.instagram.com/willystyles00001?igsh=MTRqMnRlMnpuOXYyMQ%3D%3D&utm_source=qr",
@@ -119,7 +84,7 @@
           "name": "What safety measures do you follow?",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "All tools are sterilized, linens are fresh, and we follow hygiene protocols to ensure safety at your doorstep."
+            "text": "All tools are sterilized, linens are fresh, and we follow strict hygiene protocols to ensure a safe professional grooming experience at your doorstep."
           }
         },
         {
