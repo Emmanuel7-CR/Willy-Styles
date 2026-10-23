@@ -3,7 +3,7 @@ import { Canvas, useFrame, useThree } from '@react-three/fiber'
 import { Environment, Lightformer } from '@react-three/drei'
 import * as THREE from 'three'
 
-const GOLD = '#c9a24b'
+const GOLD = '#b8995c'
 const easeOut = (x) => 1 - Math.pow(1 - x, 3)
 const easeIn = (x) => x * x * x
 
@@ -127,7 +127,7 @@ function Scissors({ scrollRef }) {
   const burst = useRef(() => {})
   const geometry = useBladeGeometry()
   const material = useMemo(
-    () => new THREE.MeshStandardMaterial({ color: GOLD, metalness: 0.9, roughness: 0.3, envMapIntensity: 1.6, emissive: '#4a3510', emissiveIntensity: 0.55, side: THREE.DoubleSide }),
+    () => new THREE.MeshStandardMaterial({ color: GOLD, metalness: 0.9, roughness: 0.3, envMapIntensity: 1.6, emissive: '#3d2f14', emissiveIntensity: 0.4, side: THREE.DoubleSide }),
     []
   )
   const { viewport, pointer } = useThree()
@@ -157,9 +157,9 @@ function Scissors({ scrollRef }) {
     const sc = scrollRef.current || 0
     const g = group.current
     const wide = viewport.width > 7
-    const baseX = wide ? viewport.width * 0.29 : 0.3
-    const baseY = wide ? 0 : viewport.height * 0.3
-    const scale = wide ? 0.68 : Math.max(0.36, viewport.width / 13)
+    const baseX = wide ? viewport.width * 0.35 : 0.3
+    const baseY = wide ? -0.55 : viewport.height * 0.3
+    const scale = wide ? 0.62 : Math.max(0.36, viewport.width / 13)
     g.scale.setScalar(scale)
     g.position.x += (baseX - 0.4 * scale * 1.4 + pointer.x * 0.5 - g.position.x) * Math.min(1, dt * 3)
     g.position.y += (baseY + Math.sin(t * 0.8) * 0.12 - sc * 2.4 - g.position.y) * Math.min(1, dt * 4)
@@ -202,12 +202,12 @@ export default function HeroScene({ scrollRef, lowPower, active = true }) {
       <ambientLight intensity={0.25} />
       <directionalLight position={[2, 3, 7]} intensity={3.2} color="#fff1d6" />
       <directionalLight position={[-4, -2, 5]} intensity={1.4} color="#ffd9a0" />
-      <pointLight position={[-5, -2, 3]} intensity={18} color="#c9a24b" />
+      <pointLight position={[-5, -2, 3]} intensity={14} color="#d9c391" />
       <Scissors scrollRef={scrollRef} />
       <Environment resolution={256} frames={1}>
         <Lightformer form="rect" intensity={7} position={[-6, 4, 3]} scale={[12, 6, 1]} color="#fff4dc" />
         <Lightformer form="rect" intensity={5} position={[4, 3, 6]} scale={[10, 5, 1]} color="#ffffff" />
-        <Lightformer form="rect" intensity={3} position={[6, -2, 4]} scale={[8, 6, 1]} color="#c9a24b" />
+        <Lightformer form="rect" intensity={3} position={[6, -2, 4]} scale={[8, 6, 1]} color="#e8dcc0" />
         <Lightformer form="ring" intensity={4} position={[0, 6, 2]} scale={6} color="#ffffff" />
         <Lightformer form="rect" intensity={1.5} position={[0, -6, -3]} scale={[20, 2, 1]} color="#6b7280" />
       </Environment>

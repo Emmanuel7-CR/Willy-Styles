@@ -1,6 +1,5 @@
 import { useMemo, useState } from 'react'
 import { useSearchParams } from 'react-router-dom'
-import PoleStage from '../components/PoleStage'
 import { PhoneIcon, WhatsAppIcon } from '../components/Icons'
 import { SERVICES, SITE } from '../data'
 import { useDocumentMeta } from '../hooks'
@@ -36,8 +35,8 @@ export default function Book() {
   return (
     <>
       <section className="page-hero wrap">
-        <p className="eyebrow">Book</p>
-        <h1 className="disp h1">Book your cut,<br /><em>we come to you.</em></h1>
+        <h1 className="disp h1">Book a cut</h1>
+        <p className="lead">Fill this in and your request opens in WhatsApp, ready to send. Willy confirms a time there.</p>
       </section>
 
       <section className="section wrap book-grid">
@@ -66,20 +65,20 @@ export default function Book() {
             <label htmlFor="notes">Anything Willy should know? <span className="muted">(optional)</span></label>
             <textarea id="notes" rows="3" value={form.notes} onChange={set('notes')} placeholder="Style you want, door description, parking and so on" />
           </div>
-          <button className="btn btn-wa wide" type="submit"><WhatsAppIcon /> Send booking on WhatsApp</button>
+          <button className="btn btn-primary wide" type="submit"><WhatsAppIcon /> Send booking on WhatsApp</button>
           <p className="muted small" role="status" aria-live="polite">
             {link ? (
               <>Didn't open? <a className="u" href={link} target="_blank" rel="noopener noreferrer">Tap here to open WhatsApp</a>.</>
             ) : (
-              'Your request opens in WhatsApp, ready to send. Willy confirms your slot there.'
+              'You will be taken to WhatsApp to send the request.'
             )}
           </p>
         </form>
 
         <aside className="book-side">
-          <PoleStage />
+          <img className="book-photo" src="/assets/cut-1.jpg" alt="A fresh fade, cut at home" width="1080" height="1009" />
           <div className="card contact">
-            <h2 className="disp">Prefer to talk?</h2>
+            <h2 className="disp h3">Prefer to talk?</h2>
             <a href={`tel:+${SITE.phoneIntl}`} className="contact-row"><PhoneIcon /> {SITE.phoneDisplay}</a>
             <a href={SITE.whatsappLink} className="contact-row" target="_blank" rel="noopener noreferrer"><WhatsAppIcon /> Chat on WhatsApp</a>
             <ul className="hours">

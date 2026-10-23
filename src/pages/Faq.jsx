@@ -12,8 +12,7 @@ export default function Faq() {
   return (
     <>
       <section className="page-hero wrap">
-        <p className="eyebrow">FAQ</p>
-        <h1 className="disp h1">Good <em>to know.</em></h1>
+        <h1 className="disp h1">Questions</h1>
       </section>
       <section className="section wrap narrow">
         <div className="faq">
@@ -27,10 +26,10 @@ export default function Faq() {
             </Reveal>
           ))}
         </div>
-        <Reveal className="cta-banner mt">
-          <h2 className="disp">Still have a question?</h2>
-          <p>Willy replies on WhatsApp.</p>
-          <a href={SITE.whatsappLink} className="btn btn-dark" target="_blank" rel="noopener noreferrer"><WhatsAppIcon /> Message Willy</a>
+        <Reveal className="end-cta">
+          <h2 className="disp h2">Still have a question?</h2>
+          <p className="muted">Willy replies on WhatsApp.</p>
+          <a href={SITE.whatsappLink} className="btn btn-primary" target="_blank" rel="noopener noreferrer"><WhatsAppIcon /> Message on WhatsApp</a>
         </Reveal>
       </section>
     </>

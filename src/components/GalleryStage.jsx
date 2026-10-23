@@ -134,7 +134,7 @@ export default function GalleryStage({ items }) {
           <button className="round" aria-label="Previous cut" onClick={() => step(-1)}><ArrowLeftIcon /></button>
           <button className="round" aria-label="Next cut" onClick={() => step(1)}><ArrowIcon /></button>
         </div>
-        <span className="gallery-hint">Drag to spin</span>
+        <span className="gallery-hint">Drag to browse</span>
       </div>
     </div>
   )

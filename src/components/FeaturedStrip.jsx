@@ -45,25 +45,23 @@ export default function FeaturedStrip() {
   return (
     <section className="fs" ref={section} aria-label="Featured work">
       <div className="fs-head wrap">
-        <p className="eyebrow">Selected work</p>
-        <h2 className="disp h2">Cuts that speak</h2>
+        <h2 className="disp h2">Recent cuts</h2>
       </div>
       <div className="fs-track" ref={track}>
-        {WORKS.map((w, i) => (
-          <Link key={w.slug} to={`/work/${w.slug}`} className="fs-card" data-cursor>
+        {WORKS.map((w) => (
+          <Link key={w.slug} to={`/work/${w.slug}`} className="fs-card">
             <div className="fs-img">
               <img src={w.img} alt={`${w.title} by Willy Styles`} loading="lazy" />
             </div>
             <div className="fs-cap">
-              <span className="disp fs-num">{String(i + 1).padStart(2, '0')}</span>
               <span className="disp fs-title">{w.title}</span>
               <span className="muted fs-tag">{w.category}</span>
             </div>
           </Link>
         ))}
-        <Link to="/work" className="fs-card fs-more" data-cursor>
+        <Link to="/work" className="fs-card fs-more">
           <span className="disp">See all work</span>
-          <ArrowIcon width={64} height={64} strokeWidth={1.2} />
+          <ArrowIcon width={40} height={40} strokeWidth={1.4} />
         </Link>
       </div>
     </section>

@@ -16,8 +16,6 @@ export default function Tilt({ as: Tag = 'div', className = '', children, max = 
     frame.current = requestAnimationFrame(() => {
       el.style.setProperty('--ry', `${(px - 0.5) * max * 2}deg`)
       el.style.setProperty('--rx', `${(0.5 - py) * max * 2}deg`)
-      el.style.setProperty('--mx', `${px * 100}%`)
-      el.style.setProperty('--my', `${py * 100}%`)
     })
   }
   const leave = () => {
@@ -29,7 +27,6 @@ export default function Tilt({ as: Tag = 'div', className = '', children, max = 
 
   return (
     <Tag ref={ref} className={`tilt ${className}`} onPointerMove={move} onPointerLeave={leave} {...rest}>
-      <span className="tilt-glare" aria-hidden="true" />
       {children}
     </Tag>
   )

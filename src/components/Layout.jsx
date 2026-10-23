@@ -1,8 +1,7 @@
 import { useEffect, useState } from 'react'
 import { Link, NavLink, useLocation } from 'react-router-dom'
 import { SITE } from '../data'
-import { ArrowIcon, InstagramIcon, TikTokIcon, WhatsAppIcon } from './Icons'
-import Cursor from './Cursor'
+import { InstagramIcon, TikTokIcon, WhatsAppIcon } from './Icons'
 
 const NAV = [
   { to: '/work', label: 'Work' },
@@ -38,7 +37,6 @@ function Header() {
       <header className={`site-header ${scrolled ? 'scrolled' : ''} ${open ? 'open' : ''}`}>
         <div className="wrap header-inner">
           <Link to="/" className="brand" aria-label="Willy Styles home">
-            <span className="brand-dot" />
             <span className="disp">Willy Styles</span>
           </Link>
           <nav className="nav" aria-label="Main">
@@ -48,7 +46,7 @@ function Header() {
               </NavLink>
             ))}
           </nav>
-          <Link to="/book" className="btn btn-gold header-cta">
+          <Link to="/book" className="btn btn-primary header-cta">
             Book a cut
           </Link>
           <button className="burger" aria-label={open ? 'Close menu' : 'Open menu'} aria-expanded={open} aria-controls="mobile-menu" onClick={() => setOpen(!open)}>
@@ -75,15 +73,13 @@ function Footer() {
     <footer className="site-footer">
       <div className="wrap">
         <div className="footer-cta">
-          <p className="eyebrow">Ready when you are</p>
-          <Link to="/book" className="footer-big disp" data-cursor>
-            Book your cut <ArrowIcon width={56} height={56} strokeWidth={1.4} />
-          </Link>
+          <h2 className="disp footer-big">Book a haircut</h2>
+          <Link to="/book" className="btn btn-primary">Book a cut</Link>
         </div>
         <div className="footer-grid">
           <div>
             <div className="disp footer-brand">Willy Styles</div>
-            <p className="muted">Mobile barber based in Sapele, serving all of Delta State.</p>
+            <p className="muted">Mobile barber in Sapele, serving Delta State.</p>
             <div className="socials">
               <a href={SITE.whatsappLink} aria-label="WhatsApp" target="_blank" rel="noopener noreferrer"><WhatsAppIcon /></a>
               <a href={SITE.instagram} aria-label="Instagram" target="_blank" rel="noopener noreferrer"><InstagramIcon /></a>
@@ -91,7 +87,7 @@ function Footer() {
             </div>
           </div>
           <div>
-            <h3 className="footer-h">Explore</h3>
+            <h3 className="footer-h">Pages</h3>
             <ul className="footer-list">
               <li><Link to="/work">Work</Link></li>
               <li><Link to="/services">Services</Link></li>
@@ -117,7 +113,7 @@ function Footer() {
             </ul>
           </div>
         </div>
-        <div className="footer-base muted">&copy; 2026 Willy Styles. Premium mobile barbing.</div>
+        <div className="footer-base muted">&copy; 2026 Willy Styles</div>
       </div>
     </footer>
   )
@@ -129,15 +125,13 @@ export default function Layout({ children }) {
     <>
       <a href="#main" className="skip">Skip to content</a>
       <Header />
-      <div key={pathname} className="wipe" aria-hidden="true" />
       <main id="main" key={pathname + '-main'} className="page">
         {children}
       </main>
       <Footer />
       <a href={SITE.whatsappLink} target="_blank" rel="noopener noreferrer" className="float-wa" aria-label="Chat on WhatsApp">
-        <WhatsAppIcon width={28} height={28} />
+        <WhatsAppIcon width={26} height={26} />
       </a>
-      <Cursor />
     </>
   )
 }

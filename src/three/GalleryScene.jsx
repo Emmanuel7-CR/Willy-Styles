@@ -38,7 +38,7 @@ const frag = /* glsl */ `
     float g = dot(c.rgb, vec3(0.299, 0.587, 0.114));
     vec3 col = mix(vec3(g) * 0.5, c.rgb, uFocus);
     col *= 0.5 + 0.5 * uFocus + 0.12 * uHover;
-    float d = rbox((vUv - 0.5) * uSize, uSize * 0.5, 0.14);
+    float d = rbox((vUv - 0.5) * uSize, uSize * 0.5, 0.05);
     float a = 1.0 - smoothstep(-0.012, 0.012, d);
     gl_FragColor = vec4(col, a * uOpacity);
   }

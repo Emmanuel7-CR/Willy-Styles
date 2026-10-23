@@ -30,7 +30,6 @@ export default function HeroStage() {
           </video>
         )}
       </div>
-      <div className="hero-glow" />
       {ok && (
         <div className="hero-canvas">
           <Suspense fallback={null}>

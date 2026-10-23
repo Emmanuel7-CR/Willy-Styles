@@ -5,9 +5,9 @@ export default function NotFound() {
   useDocumentMeta('Page not found | Willy Styles', 'This page could not be found.', '/404')
   return (
     <section className="page-hero wrap notfound">
-      <p className="eyebrow">404</p>
-      <h1 className="disp h1">That page got<br /><em>trimmed.</em></h1>
-      <Link to="/" className="btn btn-gold">Back home</Link>
+      <h1 className="disp h1">Page not found</h1>
+      <p className="lead">The page you are looking for is not here.</p>
+      <Link to="/" className="btn btn-primary">Back to home</Link>
     </section>
   )
 }

@@ -27,7 +27,7 @@ export default function WorkDetail() {
             <img src={w.img} alt={`${w.title} by Willy Styles`} width={w.w} height={w.h} />
           </div>
           <div className="detail-text">
-            <p className="eyebrow">{w.category}</p>
+            <p className="muted">{w.category}</p>
             <h1 className="disp h1">{w.title}</h1>
             <p className="lead">{w.blurb}</p>
             <ul className="ticks">
@@ -36,7 +36,7 @@ export default function WorkDetail() {
               ))}
             </ul>
             <div className="hero-actions">
-              <Link to={`/book?service=${encodeURIComponent(w.service)}`} className="btn btn-gold">
+              <Link to={`/book?service=${encodeURIComponent(w.service)}`} className="btn btn-primary">
                 Book this style <ArrowIcon width={18} height={18} />
               </Link>
             </div>
@@ -44,11 +44,11 @@ export default function WorkDetail() {
         </div>
       </section>
       <section className="wrap pager">
-        <Link to={`/work/${prev.slug}`} className="pager-link" data-cursor>
+        <Link to={`/work/${prev.slug}`} className="pager-link">
           <span className="muted">Previous</span>
           <span className="disp">{prev.title}</span>
         </Link>
-        <Link to={`/work/${next.slug}`} className="pager-link right" data-cursor>
+        <Link to={`/work/${next.slug}`} className="pager-link right">
           <span className="muted">Next</span>
           <span className="disp">{next.title}</span>
         </Link>
