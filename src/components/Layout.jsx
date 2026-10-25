@@ -72,48 +72,27 @@ function Footer() {
   return (
     <footer className="site-footer">
       <div className="wrap">
-        <div className="footer-cta">
-          <h2 className="disp footer-big">Book a haircut</h2>
-          <Link to="/book" className="btn btn-primary">Book a cut</Link>
-        </div>
-        <div className="footer-grid">
+        <div className="footer-top">
           <div>
-            <div className="disp footer-brand">Willy Styles</div>
-            <p className="muted">Mobile barber in Sapele, serving Delta State.</p>
-            <div className="socials">
-              <a href={SITE.whatsappLink} aria-label="WhatsApp" target="_blank" rel="noopener noreferrer"><WhatsAppIcon /></a>
-              <a href={SITE.instagram} aria-label="Instagram" target="_blank" rel="noopener noreferrer"><InstagramIcon /></a>
-              <a href={SITE.tiktok} aria-label="TikTok" target="_blank" rel="noopener noreferrer"><TikTokIcon /></a>
-            </div>
+            <div className="footer-brand">Willy Styles</div>
+            <p className="muted small">Mobile barber in Sapele, serving Delta State.</p>
           </div>
-          <div>
-            <h3 className="footer-h">Pages</h3>
-            <ul className="footer-list">
-              <li><Link to="/work">Work</Link></li>
-              <li><Link to="/services">Services</Link></li>
-              <li><Link to="/about">About</Link></li>
-              <li><Link to="/faq">FAQ</Link></li>
-              <li><Link to="/book">Book</Link></li>
-            </ul>
-          </div>
-          <div>
-            <h3 className="footer-h">Contact</h3>
-            <ul className="footer-list">
-              <li><a href={`tel:+${SITE.phoneIntl}`}>{SITE.phoneDisplay}</a></li>
-              <li><a href={SITE.whatsappLink} target="_blank" rel="noopener noreferrer">Chat on WhatsApp</a></li>
-              <li><a href={SITE.instagram} target="_blank" rel="noopener noreferrer">{SITE.instagramHandle}</a></li>
-            </ul>
-          </div>
-          <div>
-            <h3 className="footer-h">Hours</h3>
-            <ul className="footer-list muted">
-              {SITE.hours.map(([d, h]) => (
-                <li key={d}>{d}<br /><span>{h}</span></li>
-              ))}
-            </ul>
+          <div className="socials">
+            <a href={SITE.whatsappLink} aria-label="WhatsApp" target="_blank" rel="noopener noreferrer"><WhatsAppIcon /></a>
+            <a href={SITE.instagram} aria-label="Instagram" target="_blank" rel="noopener noreferrer"><InstagramIcon /></a>
+            <a href={SITE.tiktok} aria-label="TikTok" target="_blank" rel="noopener noreferrer"><TikTokIcon /></a>
           </div>
         </div>
-        <div className="footer-base muted">&copy; 2026 Willy Styles</div>
+        <div className="footer-bottom muted small">
+          <nav className="footer-links" aria-label="Footer">
+            <Link to="/work">Work</Link>
+            <Link to="/services">Services</Link>
+            <Link to="/about">About</Link>
+            <Link to="/faq">FAQ</Link>
+            <a href={`tel:+${SITE.phoneIntl}`}>{SITE.phoneDisplay}</a>
+          </nav>
+          <span>&copy; 2026 Willy Styles</span>
+        </div>
       </div>
     </footer>
   )

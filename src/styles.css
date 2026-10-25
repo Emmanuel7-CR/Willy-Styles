@@ -266,20 +266,16 @@ button.chip:hover { border-color: var(--text); }
 .faq-item p { margin-top: 12px; font-size: 17px; max-width: 640px; }
 
 /* ============ FOOTER ============ */
-.site-footer { margin-top: clamp(72px, 10vw, 140px); border-top: 1px solid var(--line); padding: clamp(48px, 6vw, 80px) 0 32px; }
-.footer-cta { display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 24px; padding-bottom: clamp(40px, 6vw, 64px); }
-.footer-big { font-size: clamp(32px, 5vw, 64px); }
-.footer-grid { display: grid; grid-template-columns: 1.4fr 1fr 1fr 1fr; gap: 32px; padding-top: 40px; border-top: 1px solid var(--line); }
-.footer-brand { font-size: 24px; font-weight: 700; margin-bottom: 8px; }
-.footer-h { font-size: 14px; color: var(--muted); margin-bottom: 14px; font-weight: 500; }
-.footer-list li { margin-bottom: 8px; font-size: 15px; }
-.footer-list a { transition: opacity 0.25s; }
-.footer-list a:hover { opacity: 0.65; }
-.footer-list li span { color: var(--text); }
-.socials { display: flex; gap: 10px; margin-top: 18px; }
-.socials a { width: 44px; height: 44px; border-radius: 50%; border: 1px solid #46423c; display: grid; place-items: center; transition: background 0.25s, color 0.25s; }
+.site-footer { margin-top: clamp(64px, 9vw, 112px); border-top: 1px solid var(--line); padding: 28px 0 24px; }
+.footer-top { display: flex; align-items: center; justify-content: space-between; gap: 20px; }
+.footer-brand { font-size: 20px; font-weight: 700; letter-spacing: -0.03em; }
+.footer-bottom { display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 8px 24px; margin-top: 20px; padding-top: 16px; border-top: 1px solid var(--line); }
+.footer-links { display: flex; flex-wrap: wrap; gap: 6px 20px; }
+.footer-links a { transition: color 0.25s; }
+.footer-links a:hover { color: var(--text); }
+.socials { display: flex; gap: 8px; flex: none; }
+.socials a { width: 42px; height: 42px; border-radius: 50%; border: 1px solid #46423c; display: grid; place-items: center; transition: background 0.25s, color 0.25s; }
 .socials a:hover { background: var(--text); color: var(--bg); }
-.footer-base { margin-top: 48px; font-size: 13px; }
 .float-wa { position: fixed; right: 20px; bottom: 20px; z-index: 90; width: 54px; height: 54px; border-radius: 50%; background: var(--text); color: var(--bg); display: grid; place-items: center; box-shadow: 0 8px 24px rgba(0, 0, 0, 0.45); transition: transform 0.25s var(--ease); }
 .float-wa:hover { transform: scale(1.06); }
 
@@ -287,12 +283,10 @@ button.chip:hover { border-color: var(--text); }
 @media (max-width: 860px) {
   .nav, .header-cta { display: none; }
   .burger { display: block; }
-  .footer-grid { grid-template-columns: 1fr 1fr; }
   .hero-inner { padding-top: 100px; }
   .detail-img { position: static; }
 }
 @media (max-width: 560px) {
-  .footer-grid { grid-template-columns: 1fr; }
   .pager { grid-template-columns: 1fr; }
   .pager-link.right { text-align: left; }
   .gallery-hint { display: none; }
