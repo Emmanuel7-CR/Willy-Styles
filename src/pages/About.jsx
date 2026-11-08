@@ -18,7 +18,7 @@ export default function About() {
 
       <section className="section wrap about-grid">
         <Reveal className="about-img">
-          <img src="/assets/cut-3.jpg" alt="Willy's setup on a porch, with his tools laid out on a table" width="810" height="1080" loading="lazy" />
+          <img src="/assets/willy.jpg" alt="Willy of Willy Styles, seated in front of a painted wall mural" width="1200" height="1600" loading="lazy" />
         </Reveal>
         <Reveal className="about-copy" delay={0.08}>
           <p className="lead">Willy Styles isn't just a barbershop. It's a mobile barber based in Sapele, serving all of Delta State.</p>

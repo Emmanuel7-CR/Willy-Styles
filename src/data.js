@@ -21,6 +21,9 @@ export const WORKS = [
   { slug: 'twists', title: 'Twists', category: 'Twists', tags: ['Twists'], img: '/assets/cut-4.jpg', w: 720, h: 953, service: 'Twists and Braids', blurb: 'Neat twists with a clean part and a sharp edge.', details: ['Twists', 'Clean parting', 'Edge-up'] },
   { slug: 'textured-top-beard', title: 'Textured top and beard', category: 'Beard', tags: ['Beard'], img: '/assets/cut-3.jpg', w: 810, h: 1080, service: 'Beard Grooming', blurb: 'Textured top with a full beard, shaped and lined up.', details: ['Textured top', 'Beard shape', 'Neckline'] },
   { slug: 'skin-fade', title: 'Skin fade', category: 'Fades', tags: ['Fades'], img: '/assets/cut-5.jpg', w: 1240, h: 1280, service: 'Skin Fade', blurb: 'A skin fade with a sharp hairline.', details: ['Skin fade', 'Hairline', 'Cut at home'] },
+  { slug: 'fade-with-design', title: 'Fade with a hair design', category: 'Fades', tags: ['Fades'], img: '/assets/cut-6.jpg', w: 1200, h: 1600, service: 'Skin Fade', blurb: 'A skin fade with a sharp lineup and a small design cut into the side.', details: ['Skin fade', 'Sharp lineup', 'Hair design'] },
+  { slug: 'textured-top-fade', title: 'Textured top and fade', category: 'Fades', tags: ['Fades'], img: '/assets/cut-7.jpg', w: 1200, h: 1600, service: 'Skin Fade', blurb: 'A textured top with a clean fade and a crisp, squared hairline.', details: ['Textured top', 'Fade', 'Squared hairline'] },
+  { slug: 'crisp-fade', title: 'Crisp fade', category: 'Fades', tags: ['Fades'], img: '/assets/cut-8.jpg', w: 1200, h: 1600, service: 'Skin Fade', blurb: 'A close fade with a sharp, even lineup.', details: ['Close fade', 'Sharp lineup', 'Cut at home'] },
 ]
 
 export const WORK_FILTERS = ['All', 'Fades', 'Twists', 'Beard']
