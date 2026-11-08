@@ -1,5 +1,10 @@
 export const SITE = {
   name: 'Willy Styles',
+  // Hero background. heroImage is always shown (and is the fallback).
+  // When you have a clip, put it in public/assets/ and set heroVideo to its path,
+  // e.g. '/assets/hero.mp4'. Leave it as null to use the photo only.
+  heroImage: '/assets/cut-5.jpg',
+  heroVideo: null,
   phoneDisplay: '+234 814 369 0562',
   phoneIntl: '2348143690562',
   whatsappLink: 'https://wa.link/js8keg',

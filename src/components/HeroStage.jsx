@@ -1,42 +1,52 @@
-import { lazy, Suspense, useEffect, useRef, useState } from 'react'
-import { isCoarsePointer, use3D, useInView } from '../hooks'
+import { useEffect, useRef, useState } from 'react'
+import { SITE } from '../data'
+import { prefersReducedMotion, useInView } from '../hooks'
 
-const HeroScene = lazy(() => import('../three/HeroScene'))
-
-// 3D scissors canvas with a video backdrop that falls back to the cut photo.
+// Hero background: a muted looping video when one is configured and the visitor
+// can play it, otherwise the photo. The photo is always rendered underneath, so
+// it also covers the moment before the video has loaded.
 export default function HeroStage() {
-  const ok = use3D()
   const box = useRef(null)
+  const video = useRef(null)
   const inView = useInView(box)
-  const scrollRef = useRef(0)
-  const [videoOk, setVideoOk] = useState(true)
+  const [allowed, setAllowed] = useState(false)
+  const [ready, setReady] = useState(false)
 
   useEffect(() => {
-    const on = () => (scrollRef.current = Math.min(1.2, window.scrollY / window.innerHeight))
-    on()
-    window.addEventListener('scroll', on, { passive: true })
-    return () => window.removeEventListener('scroll', on)
+    if (!SITE.heroVideo) return
+    const c = navigator.connection
+    const slow = c && (c.saveData || /(^|-)2g$/.test(c.effectiveType || ''))
+    setAllowed(!prefersReducedMotion() && !slow)
   }, [])
+
+  // Pause when scrolled away to save battery and data.
+  useEffect(() => {
+    const v = video.current
+    if (!v || !allowed) return
+    if (inView) v.play().catch(() => setReady(false))
+    else v.pause()
+  }, [inView, allowed])
 
   return (
     <div className="hero-stage" ref={box}>
-      {/* Drop a short muted clip at /assets/hero.mp4 and it plays behind the 3D scene.
-          If the file is missing or autoplay is blocked, the poster photo stays. */}
-      <div className="hero-backdrop">
-        <img src="/assets/cut-5.jpg" alt="" className="hero-poster" fetchpriority="high" />
-        {videoOk && ok && (
-          <video className="hero-video" autoPlay muted loop playsInline preload="metadata" poster="/assets/cut-5.jpg" onError={() => setVideoOk(false)}>
-            <source src="/assets/hero.mp4" type="video/mp4" onError={() => setVideoOk(false)} />
-          </video>
-        )}
-      </div>
-      {ok && (
-        <div className="hero-canvas">
-          <Suspense fallback={null}>
-            <HeroScene scrollRef={scrollRef} lowPower={isCoarsePointer()} active={inView} />
-          </Suspense>
-        </div>
+      <img src={SITE.heroImage} alt="" className={`hero-poster ${ready ? 'hidden' : ''}`} fetchpriority="high" />
+      {allowed && (
+        <video
+          ref={video}
+          className={`hero-video ${ready ? 'show' : ''}`}
+          autoPlay
+          muted
+          loop
+          playsInline
+          preload="metadata"
+          poster={SITE.heroImage}
+          onCanPlay={() => setReady(true)}
+          onError={() => { setAllowed(false); setReady(false) }}
+        >
+          <source src={SITE.heroVideo} type={SITE.heroVideo.endsWith('.webm') ? 'video/webm' : 'video/mp4'} onError={() => { setAllowed(false); setReady(false) }} />
+        </video>
       )}
+      <div className="hero-shade" />
     </div>
   )
 }

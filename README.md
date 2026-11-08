@@ -17,11 +17,14 @@ Netlify builds with `npm run build` and publishes `dist/` (see `netlify.toml`). 
 Edit `src/data.js` for works, services, FAQs and contact details. Prices are intentionally not shown anywhere.
 
 ## 3D
-- Home hero: gold scissors that snip and scatter clippings (`src/three/HeroScene.jsx`)
 - Work: draggable curved photo wall with shader bend (`src/three/GalleryScene.jsx`)
-- Book: barber pole (`src/three/PoleScene.jsx`)
 
 Visitors with reduced-motion or no WebGL get static fallbacks.
 
 ## Hero video
-Drop a short, muted clip at `public/assets/hero.mp4` and it plays behind the scissors. Without it, the cut photo is used.
+The home hero shows a photo (`SITE.heroImage` in `src/data.js`). To use a video instead:
+
+1. Put a short, muted clip in `public/assets/` (landscape, 6-10 seconds, ideally under 5 MB, H.264 `.mp4` or `.webm`).
+2. Set `heroVideo: '/assets/hero.mp4'` in `src/data.js`.
+
+The photo stays as the poster and fallback: it shows while the video loads and whenever the video can't play (reduced motion, data saver or 2G, autoplay blocked, load error). The video pauses when scrolled out of view.

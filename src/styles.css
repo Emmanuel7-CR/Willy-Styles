@@ -103,13 +103,15 @@ button { cursor: pointer; }
 
 /* ============ HERO ============ */
 .hero { position: relative; min-height: 100svh; display: flex; align-items: center; overflow: hidden; }
-.hero-stage { position: absolute; inset: 0; }
-.hero-backdrop { position: absolute; inset: 0; }
-.hero-poster, .hero-video { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; opacity: 0.3; filter: saturate(0.6) contrast(1.05); }
-.hero-video { opacity: 0.36; }
-.hero-backdrop::after { content: ''; position: absolute; inset: 0; background: linear-gradient(90deg, var(--bg) 14%, rgba(15,14,13,0.6) 60%, rgba(15,14,13,0.82)), linear-gradient(180deg, rgba(15,14,13,0.6), transparent 30%, var(--bg) 100%); }
-.hero-canvas { position: absolute; inset: 0; }
-.hero-canvas canvas { display: block; }
+.hero-stage { position: absolute; inset: 0; background: var(--bg); }
+.hero-poster, .hero-video { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; object-position: 50% 30%; }
+.hero-poster { animation: hero-drift 24s ease-in-out infinite alternate; transition: opacity 0.8s; object-position: 50% 58%; }
+@media (min-width: 861px) { .hero-poster { left: auto; right: 0; width: 62%; -webkit-mask-image: linear-gradient(90deg, transparent 0, #000 38%); mask-image: linear-gradient(90deg, transparent 0, #000 38%); } }
+.hero-poster.hidden { opacity: 0; }
+.hero-video { opacity: 0; transition: opacity 0.8s; }
+.hero-video.show { opacity: 1; }
+@keyframes hero-drift { from { transform: scale(1); } to { transform: scale(1.06); } }
+.hero-shade { position: absolute; inset: 0; background: linear-gradient(90deg, rgba(15,14,13,0.9) 0%, rgba(15,14,13,0.55) 45%, rgba(15,14,13,0.1) 100%), linear-gradient(180deg, rgba(15,14,13,0.5) 0%, transparent 25%, rgba(15,14,13,0.8) 100%); }
 .hero-inner { position: relative; z-index: 2; padding-top: 120px; padding-bottom: 80px; pointer-events: none; }
 .hero-inner > * { pointer-events: auto; }
 .hero-title { font-size: clamp(44px, 8vw, 112px); font-weight: 600; margin-bottom: 24px; pointer-events: none; }
@@ -299,4 +301,5 @@ button.chip:hover { border-color: var(--text); }
   *, *::before, *::after { animation-duration: 0.001ms !important; animation-iteration-count: 1 !important; transition-duration: 0.001ms !important; scroll-behavior: auto !important; }
   .reveal { opacity: 1; transform: none; }
   .hero-title .line > span { transform: none; }
+  .hero-poster { animation: none; }
 }
