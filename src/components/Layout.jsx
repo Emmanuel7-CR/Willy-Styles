@@ -91,7 +91,10 @@ function Footer() {
             <Link to="/faq">FAQ</Link>
             <a href={`tel:+${SITE.phoneIntl}`}>{SITE.phoneDisplay}</a>
           </nav>
-          <span>&copy; 2026 Willy Styles</span>
+          <span>
+            &copy; 2026 Willy Styles &middot; Built by{' '}
+            <a className="credit" href="https://emmanuelwebdesign.com.ng/" target="_blank" rel="noopener">Emmanuel Web Design</a>
+          </span>
         </div>
       </div>
     </footer>

@@ -303,3 +303,6 @@ button.chip:hover { border-color: var(--text); }
   .hero-title .line > span { transform: none; }
   .hero-poster { animation: none; }
 }
+
+.footer-bottom .credit { color: var(--text); text-decoration: underline; text-underline-offset: 3px; text-decoration-color: var(--line); }
+.footer-bottom .credit:hover { text-decoration-color: var(--text); }
