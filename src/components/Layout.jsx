@@ -1,6 +1,7 @@
-import { useEffect, useState } from 'react'
+import { useEffect, useRef, useState } from 'react'
 import { Link, NavLink, useLocation } from 'react-router-dom'
 import { SITE } from '../data'
+import { useInView } from '../hooks'
 import { InstagramIcon, TikTokIcon, WhatsAppIcon } from './Icons'
 
 const NAV = [
@@ -103,6 +104,9 @@ function Footer() {
 
 export default function Layout({ children }) {
   const { pathname } = useLocation()
+  const footRef = useRef(null)
+  const footVisible = useInView(footRef, "0px")
+  const hideWa = footVisible || pathname.startsWith('/book') || pathname === '/work'
   return (
     <>
       <a href="#main" className="skip">Skip to content</a>
@@ -110,8 +114,8 @@ export default function Layout({ children }) {
       <main id="main" key={pathname + '-main'} className="page">
         {children}
       </main>
-      <Footer />
-      <a href={SITE.whatsappLink} target="_blank" rel="noopener noreferrer" className="float-wa" aria-label="Chat on WhatsApp">
+      <div ref={footRef}><Footer /></div>
+      <a href={SITE.whatsappLink} target="_blank" rel="noopener noreferrer" className={`float-wa ${hideWa ? 'away' : ''}`} aria-label="Chat on WhatsApp" tabIndex={hideWa ? -1 : 0}>
         <WhatsAppIcon width={26} height={26} />
       </a>
     </>

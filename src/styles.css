@@ -278,8 +278,10 @@ button.chip:hover { border-color: var(--text); }
 .socials { display: flex; gap: 8px; flex: none; }
 .socials a { width: 42px; height: 42px; border-radius: 50%; border: 1px solid #46423c; display: grid; place-items: center; transition: background 0.25s, color 0.25s; }
 .socials a:hover { background: var(--text); color: var(--bg); }
-.float-wa { position: fixed; right: 20px; bottom: 20px; z-index: 90; width: 54px; height: 54px; border-radius: 50%; background: var(--text); color: var(--bg); display: grid; place-items: center; box-shadow: 0 8px 24px rgba(0, 0, 0, 0.45); transition: transform 0.25s var(--ease); }
-.float-wa:hover { transform: scale(1.06); }
+.float-wa { position: fixed; right: 14px; bottom: 14px; z-index: 90; width: 44px; height: 44px; opacity: 0.92; border-radius: 50%; background: var(--text); color: var(--bg); display: grid; place-items: center; box-shadow: 0 8px 24px rgba(0, 0, 0, 0.45); transition: transform 0.25s var(--ease); }
+.float-wa:hover { transform: scale(1.06); opacity: 1; }
+.float-wa.away { opacity: 0; transform: scale(0.8); pointer-events: none; }
+.float-wa svg { width: 22px; height: 22px; }
 
 /* ============ RESPONSIVE ============ */
 @media (max-width: 860px) {
